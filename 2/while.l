@@ -11,18 +11,18 @@ CHAR			[a-zA-Z]
 
 %%
 
-program		std::cout << "program" << std::endl;
-begin		std::cout << "begin" << std::endl;
-end			std::cout << "end" << std::endl;
-natural		std::cout << "natural" << std::endl; 
-boolean		std::cout << "boolean" << std::endl;
-true     	std::cout << "true" << std::endl;
+program		  std::cout << "program" << std::endl;
+begin		    std::cout << "begin" << std::endl;
+end			    std::cout << "end" << std::endl;
+natural		  std::cout << "natural" << std::endl;
+boolean		  std::cout << "boolean" << std::endl;
+true     	  std::cout << "true" << std::endl;
 false     	std::cout << "false" << std::endl;
-div     	std::cout << "div" << std::endl;
-mod     	std::cout << "mod" << std::endl;
-and     	std::cout << "and" << std::endl;
-or     		std::cout << "or" << std::endl;
-not     	std::cout << "not" << std::endl;
+div       	std::cout << "div" << std::endl;
+mod     	  std::cout << "mod" << std::endl;
+and     	  std::cout << "and" << std::endl;
+or     		  std::cout << "or" << std::endl;
+not     	  std::cout << "not" << std::endl;
 skip        std::cout << "skip" << std::endl;
 if          std::cout << "if" << std::endl;
 then        std::cout << "then" << std::endl;
