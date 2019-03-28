@@ -46,13 +46,13 @@ write       return Parser::WRITE;
 "="         return Parser::EQUAL;
 ";"         return Parser::SEMICOLON;
 
-{CHAR}({CHAR}|{DIGIT}|_)*    return Parser::PROGRAM;
-{DIGIT}+    return Parser::PROGRAM;
+{CHAR}({CHAR}|{DIGIT}|_)*    return Parser::IDENTIFICATOR;
+{DIGIT}+    return Parser::NUMBER;
 
-#[^#]*#		  //std::cout<< "comment" << std::endl;
-
-
+#[^#]*#		  // komment: semmi teendo
 {WS}+       // feher szokozok: semmi teendo
+
+
 
 . {
     std::cerr << lineno() << ". line: Lexical error!" << std::endl;
