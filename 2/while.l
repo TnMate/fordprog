@@ -43,7 +43,7 @@ write       return Parser::WRITE;
 "*"         return Parser::STAR;
 "<"         return Parser::LESS_THAN;
 ">"         return Parser::GREATER_THAN;
-"="         return Parser::EQUAL;
+"="         return Parser::EQUALS;
 ";"         return Parser::SEMICOLON;
 
 {CHAR}({CHAR}|{DIGIT}|_)*    return Parser::IDENTIFICATOR;
