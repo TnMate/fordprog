@@ -88,17 +88,17 @@ statement: SKIP SEMICOLON
 
 ifelse: IF expression THEN statements elseifs ENDIF
   {
-    std::cout << "statement -> IF expression THEN statements elseifs ENDIF" << std::endl;
+    std::cout << "ifelse -> IF expression THEN statements elseifs ENDIF" << std::endl;
   }
 | IF expression THEN statements elseifs ELSE statements ENDIF
   {
-    std::cout << "statement -> IF expression THEN statements elseifs ELSE statements ENDIF" << std::endl;
+    std::cout << "ifelse -> IF expression THEN statements elseifs ELSE statements ENDIF" << std::endl;
   }
 ;
 
 elseifs: ELSEIF expression THEN statements elseifs
   {
-    std::cout << "statement -> ELSEIF expression THEN statements elseifs" << std::endl;
+    std::cout << "elseifs -> ELSEIF expression THEN statements elseifs" << std::endl;
   }
 |
   {
