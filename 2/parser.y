@@ -38,20 +38,80 @@ declarations: // nothing
   }
 ;
 
-declaration:
+declaration: type IDENTIFICATOR SEMICOLON
   {
-    std::cout << "declaration -> " << std::endl;
+    std::cout << "declaration -> type IDENTIFICATOR SEMICOLON" << std::endl;
   }
 ;
 
-statements:
+statements: statement
   {
-    std::cout << "statements -> " << std::endl;
+    std::cout << "statements -> statement" << std::endl;
+  }
+| statement statements
+  {
+    std::cout << "statements -> statement statements" << std::endl;
   }
 ;
 
-statement:
+statement: SKIP SEMICOLON
+// skip
   {
-    std::cout << "statement -> " << std::endl;
+    std::cout << "statement -> SKIP" << std::endl;
+  }
+// assign
+| IDENTIFICATOR ASSIGN expression SEMICOLON
+  {
+    std::cout << "statement -> IDENTIFICATOR ASSIGN expression SEMICOLON" << std::endl;
+  }
+// read
+| READ LEFT_BRACKET IDENTIFICATOR RIGHT_BRACKET SEMICOLON
+  {
+    std::cout << "statement -> READ LEFT_BRACKET IDENTIFICATOR RIGHT_BRACKET SEMICOLON" << std::endl;
+  }
+// write
+| WRITE LEFT_BRACKET IDENTIFICATOR RIGHT_BRACKET SEMICOLON
+  {
+    std::cout << "statement -> WRITE LEFT_BRACKET IDENTIFICATOR RIGHT_BRACKET SEMICOLON" << std::endl;
+  }
+// while
+| WHILE expression DO statements DONE
+  {
+    std::cout << "statement -> WHILE expression DO statements DONE" << std::endl;
+  }
+// if , if else, if elseif..., if elseif... else
+| ifelse
+  {
+    std::cout << "statement -> ifelse" << std::endl;
+  }
+;
+
+ifelse: IF expression THEN statements elseifs ENDIF
+  {
+    std::cout << "statement -> IF expression THEN statements elseifs ENDIF" << std::endl;
+  }
+| IF expression THEN statements elseifs ELSE statements ENDIF
+  {
+    std::cout << "statement -> IF expression THEN statements elseifs ELSE statements ENDIF" << std::endl;
+  }
+;
+
+elseifs: ELSEIF expression THEN statements elseifs
+  {
+    std::cout << "statement -> ELSEIF expression THEN statements elseifs" << std::endl;
+  }
+|
+  {
+    // no else if part
+  }
+;
+
+type: NATURAL
+  {
+    std::cout << "type -> NATURAL" << std::endl;
+  }
+| BOOL
+  {
+    std::cout << "type -> BOOL" << std::endl;
   }
 ;
