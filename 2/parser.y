@@ -11,10 +11,10 @@
 %token LEFT_BRACKET RIGHT_BRACKET
 %token ASSIGN
 %token SEMICOLON
+%token NUMBER
 
-%left OR
-%left AND
-%left NOT
+%token NOT
+%left AND OR
 %left EQUALS
 %left LESS_THAN GREATER_THAN
 %left PLUS MINUS
@@ -113,5 +113,79 @@ type: NATURAL
 | BOOL
   {
     std::cout << "type -> BOOL" << std::endl;
+  }
+;
+
+//%token NOT
+//%left AND OR
+//%left EQUALS
+//%left LESS_THAN GREATER_THAN
+//%left PLUS MINUS
+//%left STAR DIV MOD
+
+expression: NOT expression
+  {
+    std::cout << "expression -> NOT expression" << std::endl;
+  }
+| expression AND expression
+  {
+    std::cout << "expression -> expression AND expression" << std::endl;
+  }
+| expression OR expression
+  {
+    std::cout << "expression -> expression OR expression" << std::endl;
+  }
+| expression EQUALS expression
+  {
+    std::cout << "expression -> expression EQUALS expression" << std::endl;
+  }
+| expression LESS_THAN expression
+  {
+    std::cout << "expression -> expression LESS_THAN expression" << std::endl;
+  }
+| expression GREATER_THAN expression
+  {
+    std::cout << "expression -> expression GREATER_THAN expression" << std::endl;
+  }
+| expression PLUS expression
+  {
+    std::cout << "expression -> expression PLUS expression" << std::endl;
+  }
+| expression MINUS expression
+  {
+    std::cout << "expression -> expression MINUS expression" << std::endl;
+  }
+| expression STAR expression
+  {
+    std::cout << "expression -> expression STAR expression" << std::endl;
+  }
+| expression DIV expression
+  {
+    std::cout << "expression -> expression DIV expression" << std::endl;
+  }
+| expression MOD expression
+  {
+    std::cout << "expression -> expression MOD expression" << std::endl;
+  }
+// other ones
+| TRUE
+  {
+    std::cout << "expression -> TRUE" << std::endl;
+  }
+| FALSE
+  {
+    std::cout << "expression -> FALSE" << std::endl;
+  }
+| NUMBER
+  {
+    std::cout << "expression -> NUMBER" << std::endl;
+  }
+| LEFT_BRACKET expression RIGHT_BRACKET
+  {
+    std::cout << "expression -> LEFT_BRACKET expression RIGHT_BRACKET" << std::endl;
+  }
+| IDENTIFICATOR
+  {
+    std::cout << "expression -> IDENTIFICATOR" << std::endl;
   }
 ;
