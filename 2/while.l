@@ -12,7 +12,7 @@ WS          [ \t\n]
 %%
 
 program		  return Parser::PROGRAM;
-begin		    return Parser::BEGIN;
+begin		    return Parser::TBEGIN;
 end			    return Parser::END;
 natural		  return Parser::NATURAL;
 boolean		  return Parser::BOOL;

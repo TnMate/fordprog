@@ -2,7 +2,7 @@
 
 %lsp-needed
 
-%token PROGRAM IDENTIFICATOR BEGIN END
+%token PROGRAM IDENTIFICATOR TBEGIN END
 %token NATURAL BOOL
 %token TRUE FALSE
 %token IF THEN ELSE ELSEIF ENDIF
@@ -22,9 +22,9 @@
 
 %%
 
-start: PROGRAM IDENTIFICATOR declarations BEGIN statements END
+start: PROGRAM IDENTIFICATOR declarations TBEGIN statements END
   {
-    std::cout << "start -> PROGRAM IDENTIFICATOR declarations BEGIN statements END" << std::endl;
+    std::cout << "start -> PROGRAM IDENTIFICATOR declarations TBEGIN statements END" << std::endl;
   }
 ;
 
