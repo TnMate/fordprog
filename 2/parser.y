@@ -70,9 +70,9 @@ statement: SKIP SEMICOLON
     std::cout << "statement -> READ LEFT_BRACKET IDENTIFICATOR RIGHT_BRACKET SEMICOLON" << std::endl;
   }
 // write
-| WRITE LEFT_BRACKET IDENTIFICATOR RIGHT_BRACKET SEMICOLON
+| WRITE LEFT_BRACKET expression RIGHT_BRACKET SEMICOLON
   {
-    std::cout << "statement -> WRITE LEFT_BRACKET IDENTIFICATOR RIGHT_BRACKET SEMICOLON" << std::endl;
+    std::cout << "statement -> WRITE LEFT_BRACKET expression RIGHT_BRACKET SEMICOLON" << std::endl;
   }
 // while
 | WHILE expression DO statements DONE
